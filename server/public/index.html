@@ -2,29 +2,37 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Weeken-sql-to-do-list</title>
+        <title>To Do App</title>
         <script src="vendors/jquery-3.6.0.js" charset="utf-8"></script>
         <script src="scripts/client.js" charset="utf-8"></script>
         <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
+        <header>
+            <h1>To DO APP</h1> 
+        </header>  
 
+        <section>
+        <div id="addTask">
+            <h2>Add Task</h2>
+            <input type="text" id="TaskIn" value="" placeholder="Enter Task">
+            <input type="text" id="DateIn" value="" placeholder="Date">
+            <button type="button" id="submitButton">Submit Task</button>
+        </div>
+        </section>
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <section>
+            <h2>Weekend To Do List</h2>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>TODO</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody id="viewTable">
+                </tbody>
+              </table>
+        </section>
     </body> 
 </html> 
