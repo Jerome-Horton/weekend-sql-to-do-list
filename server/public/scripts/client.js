@@ -2,31 +2,9 @@ $(document).ready(onReady);
 
 function onReady() {
         console.log("Let's Go!! 🕺");
-    $('#submitButton').on('click', createNewTask);
-    displayTasks();
+        getNewTasks();
+    $('#submitButton').on('click', clickListener);
 };
-
-// Create function for Submit Button
-function createNewTask(newTask) {
-// ajax call to server POST Tasks
-    console.log('in Submit Button 💫', newTask);
-    let newTask = {
-        task: $('#taskIn').val(),
-        date: $('#datein').val(),
-        is_complete: $('#taskStatus').val()
-    };
-    $.ajax({
-        type:'POST',
-        url: '/toDoList',
-        data: newTask
-    }).then((response) => {
-        console.log('POST /toDoList succeeded');
-        clearInputs();
-    }).catch((err) => {
-        console.error(err);
-        alert('🛑 unable to add new tasks at this time, Please try again later')
-    });
-} // end createNewTask
 
 function clearInputs(){
     console.log('In Clear Inputs 🌅');
@@ -35,36 +13,58 @@ function clearInputs(){
         $('#taskStatus').val('');
 }; // end clearInputs
 
-function displayTasks() {
-    console.log('In Display Task 🌍');
+
+// Create function for Submit Button
+function clickListener() {
+// get user input and put in an object
+    console.log('in Submit Button 💫');
+    let taskToDo = {
+        task: $('#taskIn').val(),
+        date: $('#dateIn').val(),
+        is_complete: $('#taskStatus').val()
+    };
+// call displayTask with the new object
+    displayTasks(taskToDo);
+    clearInputs();
+};
+
+function getNewTasks() {
+        console.log('in getNewTasks', getNewTasks);
+// call to server to get newTask
+    $.ajax({
+        type:'GET',
+        url: '/toDoList',
+    }).then((response) => {
+        const toDoList = response;
+        console.log('GET /toDoList successful', toDoList);
+        $('#viewTable').empty();
+        console.log('GET /toDoList succeeded', toDoList);
+    for (let tasks of response) {
+            $('#viewTable').append(`
+              <tr>
+                <td>${tasks.task}</td>
+                <td>${tasks.date}</td>
+                <td>${tasks.is_complete}</td>
+              </tr>
+            `);
+        }   
+    });
+} // end createNewTask
+
+
+function displayTasks(newTask) {
+    console.log('In Display Task 🌍', newTask);
 // ajax call to server GET Tasks
     $.ajax({
         type:'POST',
         url: '/toDoList',
         data: newTask
     }).then((response) => {
-        const toDoList = response;
-        $('#viewTable').empty();
-        console.log('GET /toDoList succeeded', toDoList);
-    for (let task of response) {
-        if(toDoList.is_complete === 'N'){
-            $('#viewTable').append(`
-              <tr>
-                <td>${task.task}</td>
-                <td>${task.date}</td>
-                <td>${task.is_complete}</td>
-              </tr>
-            `)
-          }else{
-            $('#viewTable').append(`
-            <tr>
-              <td>${task.task}</td>
-              <td>${task.date}</td>
-              <td>${task.is_complete}</td>
-              <td></td>
-            </tr>
-            `)
-          } 
-        }   
-    });
-}// end displayTasks
+        console.log(('POST /toDoList is working', response));
+        getNewTasks();
+    }).catch(function(error) {
+        console.log('Error in POST', error)
+        alert('Unable to add new Task at this time. Please try again later.');
+        });
+    }
+ // end displayTasks
