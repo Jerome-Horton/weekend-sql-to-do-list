@@ -40,7 +40,16 @@ Mandatory Installations
 [✅] Jquery Submit Button, and assigned a new function for click listerner
 [✅] Create Post Route function
 [✅] Clear Input Fields
-[] Create Get Route function
-[] Append table to the Dom.
+[✅] Create Get Route function
+[✅] Append table to the Dom
+[] Create Complete Task Button 
+[] Append Complete Button to the table
+[] When a Task is complete, its visual representation should change on the front end. For example, the background of the task container could change from gray to green. The complete option should be 'checked off'. 
+[] Link the complete Button to toDoList routes
+[] Create a Delete Button
+[] Append Delete Button to the table
+[] Link the Delete Button to toDoList routes
+
+
 
 

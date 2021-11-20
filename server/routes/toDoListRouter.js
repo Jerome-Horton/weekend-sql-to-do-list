@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
       });
   });
 
-// 
+// POST
 
 router.post('/', (req, res) => {
     console.log('POST /toDoListRouter');
@@ -45,5 +45,30 @@ router.post('/', (req, res) => {
       });
   });
 
+// PUT
+
+router.put('/:id', (req, res) =>{
+  console.log('req.params =', req.params);
+  const taskToUpdate = req.params.id;
+  const sqlText = `
+      UPDATE toDoList
+      SET "is_complete"=$1
+      WHERE "id"=$2;
+  `;
+  const sqlValues = [
+      'Y',
+      taskToUpdate
+  ];
+
+  pool.query(sqlText, sqlValues)
+      .then((dbResult) =>{
+          res.sendStatus(201);
+      }).catch((dbError) =>{
+          console.log(dbError);
+          res.sendStatus(500);
+      });
+});
+
+// DELETE
 
 module.exports = router;
