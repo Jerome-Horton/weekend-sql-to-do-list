@@ -16,8 +16,8 @@
         <div id="addTask">
             <h2>Add Task</h2>
             <input type="text" id="taskIn" value="" placeholder="Task Description">
-            <input type="text" id="dateIn" value="" placeholder="Date">
-            <input type="text" id="taskStatus" value="" placeholder="Complete">
+            <input type="text" id="dateIn" value="" placeholder="Due Date">
+            <input type="text" id="taskStatus" value="" placeholder="Completion Status">
             <button type="button" id="submitButton">Submit Task</button>
         </div>
         </section>
@@ -28,8 +28,10 @@
                 <thead>
                   <tr>
                     <th>Task</th>
-                    <th>Date</th>
-                    <th>Status</th>
+                    <th>Deadline</th>
+                    <th>Is The Task Completed? (Y or N)</th>
+                    <th>Mark Complete</th>
+                    <th>Delete</th>
                   </tr>
                 </thead>
                 <tbody id="viewTable">

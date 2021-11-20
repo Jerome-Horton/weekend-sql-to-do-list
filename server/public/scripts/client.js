@@ -4,6 +4,7 @@ function onReady() {
         console.log("Let's Go!! 🕺");
         getNewTasks();
     $('#submitButton').on('click', clickListener);
+    $(document).on('click', '.completeBtn', taskIsComplete)
 };
 
 function clearInputs(){
@@ -40,13 +41,25 @@ function getNewTasks() {
         $('#viewTable').empty();
         console.log('GET /toDoList succeeded', toDoList);
     for (let tasks of response) {
+        if(tasks.is_complete === 'N'){
             $('#viewTable').append(`
               <tr>
                 <td>${tasks.task}</td>
                 <td>${tasks.date}</td>
                 <td>${tasks.is_complete}</td>
+                <td><button class="completeBtn" data-id="${tasks.id}">complete</button></td>
               </tr>
-            `);
+            `)
+        }else{
+            $('#viewTable').append(`
+            <tr>
+            <td>${tasks.task}</td>
+            <td>${tasks.date}</td>
+            <td>${tasks.is_complete}</td>
+          </tr>
+          <td></td>
+        `)
+          }
         }   
     });
 } // end createNewTask
@@ -68,3 +81,17 @@ function displayTasks(newTask) {
         });
     }
  // end displayTasks
+
+function taskIsComplete(){
+    console.log('In taskisComplete');
+    const taskToComplete = $(this).data('id');
+    $.ajax({
+        method: 'PUT',
+        url: `/toDoList/${taskToComplete}` 
+    }).then((res) =>{
+        console.log('PUT /toDoList is working', res);
+        getNewTasks();
+      }).catch((error) =>{
+        console.log('taskIsComplete error:', error);
+      })
+}
