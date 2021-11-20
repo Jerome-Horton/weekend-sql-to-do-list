@@ -34,7 +34,13 @@ Mandatory Installations
 [✅] Connect PG, Server, and database
 [✅] Ensure Port is running
 
-# Client
+# Client File
 
+[✅] Create Jquery Function onReady
+[✅] Jquery Submit Button, and assigned a new function for click listerner
+[✅] Create Post Route function
+[✅] Clear Input Fields
+[] Create Get Route function
+[] Append table to the Dom.
 
 

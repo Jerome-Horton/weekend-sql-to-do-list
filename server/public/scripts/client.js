@@ -6,7 +6,6 @@ function onReady() {
 };
 
 // Create function for Submit Button
-
 function createNewTask() {
     console.log('in Submit Button 💫');
     let newTask = {
@@ -20,8 +19,16 @@ function createNewTask() {
         data: newTask
     }).then((response) => {
         console.log('POST /toDoList succeeded');
+        clearInputs();
     }).catch((err) => {
         console.error(err);
         alert('🛑 unable to add new tasks at this time, Please try again later')
     });
 } // end createNewTask
+
+function clearInputs(){
+    console.log('In Clear Inputs 🌅');
+  $('#taskIn').val('');
+  $('#datein').val('');
+  $('#taskStatus').val('');
+};
