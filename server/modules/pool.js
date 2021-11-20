@@ -6,7 +6,7 @@ const Pool = pg.Pool;
 
 // Create pool object using the above constructor:
 const pool = new Pool({
-    database: 'Weekend-to-do-app', // the name of database, This can change!
+    database: 'Week-end-to-do-app', // the name of database, This can change!
     host: 'localhost' // where is your database?
 });
 
