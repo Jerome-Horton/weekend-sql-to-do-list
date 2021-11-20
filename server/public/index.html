@@ -9,7 +9,7 @@
     </head>
     <body>
         <header>
-            <h1>To DO APP</h1> 
+            <h1>TO DO APP</h1> 
         </header>  
 
         <section>
@@ -17,6 +17,7 @@
             <h2>Add Task</h2>
             <input type="text" id="TaskIn" value="" placeholder="Enter Task">
             <input type="text" id="DateIn" value="" placeholder="Date">
+            <input type="text" id="taskStatus" value="" placeholder="Complete">
             <button type="button" id="submitButton">Submit Task</button>
         </div>
         </section>
@@ -26,8 +27,9 @@
             <table class="table">
                 <thead>
                   <tr>
-                    <th>TODO</th>
+                    <th>Task</th>
                     <th>Date</th>
+                    <th>Status</th>
                   </tr>
                 </thead>
                 <tbody id="viewTable">
