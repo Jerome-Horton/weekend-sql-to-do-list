@@ -87,8 +87,10 @@ button {
 .completeBtn:hover{
     background-color: chartreuse;
     color: white;
-  }
-  .done{
+}
+
+.done{
     text-decoration-color: green;
     text-decoration-color:black;
-  }
+}
+
