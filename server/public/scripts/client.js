@@ -6,6 +6,7 @@ function onReady() {
     $('#submitButton').on('click', clickListener);
     $(document).on('click', '.completeBtn', taskIsComplete);
     $(document).on('click', '.deleteBtn', deleteTask);
+    addTimeDate();
 };
 
 function clearInputs(){
@@ -38,7 +39,7 @@ function getNewTasks() {
         url: '/toDoList',
     }).then((response) => {
         const toDoList = response;
-        console.log('GET /toDoList successful', toDoList);
+        console.log('GET /toDoList succeeded', toDoList);
         $('#viewTable').empty();
         console.log('GET /toDoList succeeded', toDoList);
     for (let tasks of response) {
@@ -60,6 +61,7 @@ function getNewTasks() {
             <td>${tasks.is_complete}</td>
             <td></td>
             <td><button class="deleteBtn" data-id="${tasks.id}">Delete</button></td>
+            
           </tr>
         `)
           }
@@ -110,4 +112,14 @@ function deleteTask(){
       }).catch((error) =>{
         console.log('deleteTask error:', error);
       });
+}
+
+function addTimeDate() {
+    console.log('in addTimeDate ⏰');
+    let currentTime = $('#currentTime')
+    currentTime.empty();
+    const current = new Date().toDateString();
+    getNewTasks();
+    currentTime.append(current)
+    console.log(current);
 }
