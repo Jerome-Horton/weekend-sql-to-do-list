@@ -1,5 +1,6 @@
 body {
-    margin: 50px
+    margin: 50px;
+    font-family: Arial, Verdana, Helvetica, Tahoma, Trebuchet MS,  Times New Roman, Georgia, Garamond, Courier New, Brush Script MT;
 }
 input {
     padding-top: 5px;
@@ -9,7 +10,7 @@ input {
 }
 
 .icon {
-    background-image: url("..image/todo.jpg");
+    /* background-image: url("..image/todo.jpg"); */
     background-color: #e2b77e;
     height: 200px;
     background-position: center;
@@ -83,3 +84,14 @@ button {
     padding: 5px 15px;
     white-space: nowrap;
 }
+
+.completeBtn:hover{
+    background-color: chartreuse;
+    color: white;
+}
+
+.done{
+    text-decoration-color: green;
+    text-decoration-color:black;
+}
+

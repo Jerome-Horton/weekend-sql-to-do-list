@@ -6,6 +6,7 @@ function onReady() {
     $('#submitButton').on('click', clickListener);
     $(document).on('click', '.completeBtn', taskIsComplete);
     $(document).on('click', '.deleteBtn', deleteTask);
+    addTimeDate();
 };
 
 function clearInputs(){
@@ -38,7 +39,7 @@ function getNewTasks() {
         url: '/toDoList',
     }).then((response) => {
         const toDoList = response;
-        console.log('GET /toDoList successful', toDoList);
+        console.log('GET /toDoList succeeded', toDoList);
         $('#viewTable').empty();
         console.log('GET /toDoList succeeded', toDoList);
     for (let tasks of response) {
@@ -60,7 +61,6 @@ function getNewTasks() {
             <td>${tasks.is_complete}</td>
             <td></td>
             <td><button class="deleteBtn" data-id="${tasks.id}">Delete</button></td>
-            
           </tr>
         `)
           }
@@ -79,6 +79,7 @@ function displayTasks(newTask) {
     }).then((response) => {
         console.log(('POST /toDoList is working', response));
         getNewTasks();
+        
     }).catch(function(error) {
         console.log('Error in POST', error)
         alert('Unable to add new Task at this time. Please try again later.');
@@ -95,6 +96,7 @@ function taskIsComplete(){
     }).then((res) =>{
         console.log('PUT /toDoList is working', res);
         getNewTasks();
+        addTimeDate();
       }).catch((error) =>{
         console.log('taskIsComplete error:', error);
       });
@@ -111,4 +113,14 @@ function deleteTask(){
       }).catch((error) =>{
         console.log('deleteTask error:', error);
       });
+}
+
+function addTimeDate() {
+    console.log('in addTimeDate ⏰');
+    let currentTime = $('#currentTime')
+    currentTime.empty();
+    const current = new Date().toDateString();
+    currentTime.append(current)
+    getNewTasks();
+    console.log(current);
 }
