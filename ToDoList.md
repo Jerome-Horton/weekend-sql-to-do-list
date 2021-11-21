@@ -51,6 +51,7 @@ Mandatory Installations
 [✅] Create DELETE route and Link the Delete Button to this route
 [✅] Add an Image folder and link it to html file
 [✅] Style ToDo List table, make the page looks great!
+[✅] Style Buttons
 [] Attempt stretch goals
 [] Add Additional ToDos if needed
 
