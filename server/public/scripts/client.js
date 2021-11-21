@@ -4,7 +4,8 @@ function onReady() {
         console.log("Let's Go!! 🕺");
         getNewTasks();
     $('#submitButton').on('click', clickListener);
-    $(document).on('click', '.completeBtn', taskIsComplete)
+    $(document).on('click', '.completeBtn', taskIsComplete);
+    $(document).on('click', '.deleteBtn', deleteTask);
 };
 
 function clearInputs(){
@@ -48,6 +49,7 @@ function getNewTasks() {
                 <td>${tasks.date}</td>
                 <td>${tasks.is_complete}</td>
                 <td><button class="completeBtn" data-id="${tasks.id}">complete</button></td>
+                <td><button class="deleteBtn" data-id="${tasks.id}">Delete</button></td>
               </tr>
             `)
         }else{
@@ -56,8 +58,8 @@ function getNewTasks() {
             <td>${tasks.task}</td>
             <td>${tasks.date}</td>
             <td>${tasks.is_complete}</td>
+            <td><button class="deleteBtn" data-id="${tasks.id}">Delete</button></td>
           </tr>
-          <td></td>
         `)
           }
         }   
@@ -93,5 +95,18 @@ function taskIsComplete(){
         getNewTasks();
       }).catch((error) =>{
         console.log('taskIsComplete error:', error);
-      })
+      });
+};
+
+function deleteTask(){
+    console.log('In deleteTask');
+    const taskToDelete = $(this).data('id');
+    $.ajax({
+        method: 'DELETE',
+        url: `/toDoList/${taskToDelete}` 
+    }).then((res) =>{
+        getNewTasks();
+      }).catch((error) =>{
+        console.log('deleteTask error:', error);
+      });
 }
