@@ -1,0 +1,85 @@
+body {
+    margin: 50px
+}
+input {
+    padding-top: 5px;
+    text-align: center;
+    border: inset;
+    border-radius: 6px;
+}
+
+.icon {
+    background-image: url("..image/todo.jpg");
+    background-color: #e2b77e;
+    height: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    text-align: center;
+}
+
+#addTask {
+    text-align: center;
+    padding: 0vw 0vw
+}
+
+
+.tableArea {
+    padding-top: 15px;
+    text-align: center;
+    margin-right: 20vw;
+    margin-left: 20vw;
+}
+
+h2 {
+    text-align: center;
+    text-decoration-line:underline;
+}
+  
+td, th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: center;
+    padding-bottom: 10px;
+}
+ th {
+    background-color:navajowhite;
+    font-size: larger;
+ }
+
+ td {
+     background-color:seashell;
+     color: black;
+     font-weight: bold;
+ }
+
+.deleteBtn{
+    position:relative;
+    background-color: rgb(235, 97, 97);
+    color: rgb(0, 0, 0);
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: justify;
+    border: backdrop; 
+  };
+
+
+.completeBtn{
+    position:relative;
+    background-color: limegreen;
+    color: rgb(0, 0, 0);
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: justify;
+    border: backdrop;
+}
+
+button {
+    border-color: #BFC3AA;
+    font-weight: bold;
+    background-color:limegreen;
+    border-radius: 6px;
+    padding: 5px 15px;
+    white-space: nowrap;
+}
