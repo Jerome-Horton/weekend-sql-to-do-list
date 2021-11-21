@@ -45,13 +45,14 @@ Mandatory Installations
 [✅] Create Complete Task Button 
 [✅] Append Complete Button to the table
 [] When a Task is complete, its visual representation should change on the front end. For example, the background of the task container could change from gray to green. The complete option should be 'checked off'. 
-[✅] Link the complete Button to toDoList routes
+[✅] Create PUT route and Link the Complete Button to this route
 [✅] Create a Delete Button
 [✅] Append Delete Button to the table
-[] Add an Image folder and link it to html file
-[] Link the Delete Button to toDoList routes
-[] Link the Delete Button to toDoList routes
-[] Link the Delete Button to toDoList routes
+[✅] Create DELETE route and Link the Delete Button to this route
+[✅] Add an Image folder and link it to html file
+[✅] Style ToDo List table, make the page looks great!
+[] Attempt stretch goals
+[] Add Additional ToDos if needed
 
 
 

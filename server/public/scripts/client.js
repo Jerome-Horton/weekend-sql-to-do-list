@@ -58,7 +58,9 @@ function getNewTasks() {
             <td>${tasks.task}</td>
             <td>${tasks.date}</td>
             <td>${tasks.is_complete}</td>
+            <td></td>
             <td><button class="deleteBtn" data-id="${tasks.id}">Delete</button></td>
+            
           </tr>
         `)
           }

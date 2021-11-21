@@ -9,34 +9,37 @@
     </head>
     <body>
         <header>
-            <h1>TO DO APP</h1> 
+            <!-- <img src="..image/todo.jpg" class="icon"> -->
+            <div class="icon">
+                <div id="todoText"></div>
+                    <h1>TO-DO List APP</h1> 
+                </div>
+            </div>
         </header>  
 
-        <section>
-        <div id="addTask">
-            <h2>Add Task</h2>
-            <input type="text" id="taskIn" value="" placeholder="Task Description">
-            <input type="text" id="dateIn" value="" placeholder="Due Date">
-            <input type="text" id="taskStatus" value="" placeholder="Completion Status">
-            <button type="button" id="submitButton">Submit Task</button>
-        </div>
-        </section>
+            <section id="addTask">
+                <h2>Add Task</h2>
+                <input type="text" id="taskIn" value="" placeholder="Task Description">
+                <input type="text" id="dateIn" value="" placeholder="Due Date">
+                <input type="text" id="taskStatus" value="" placeholder="Is The Task Complete?">
+                <button type="button" id="submitButton">Submit Task</button>
+            </section>
         
-        <section>
-            <h2>Weekend To Do List</h2>
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th>Task</th>
-                    <th>Deadline</th>
-                    <th>Task Complete? (Yes or No)</th>
-                    <th>Mark Complete</th>
-                    <th>Delete</th>
-                  </tr>
-                </thead>
-                <tbody id="viewTable">
-                </tbody>
-              </table>
-        </section>
+                <div class="tableArea">
+                    <h2>Weekend To-Do List</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Task</th>
+                                <th>Deadline</th>
+                                <th>Task Complete? (Yes or No)</th>
+                                <th>Mark Complete</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody id="viewTable">
+                        </tbody>
+                    </table>
+                </div>
     </body> 
 </html> 
