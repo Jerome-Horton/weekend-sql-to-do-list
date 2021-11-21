@@ -1,4 +1,4 @@
- body {
+body {
     margin: 50px
 }
 input {
@@ -9,7 +9,7 @@ input {
 }
 
 .icon {
-    background-image: url("..image/todo.jpg");
+    /* background-image: url("..image/todo.jpg"); */
     background-color: #e2b77e;
     height: 200px;
     background-position: center;
@@ -83,3 +83,12 @@ button {
     padding: 5px 15px;
     white-space: nowrap;
 }
+
+.completeBtn:hover{
+    background-color: chartreuse;
+    color: white;
+  }
+  .done{
+    text-decoration-color: green;
+    text-decoration-color:black;
+  }

@@ -4,6 +4,8 @@ Project Set-Up Structure
 
 * Add check mark for confirmation
 
+# Project Creation
+
 [✅] Create Server folders and sub folders and files. 
     1. Create server.js file in Server folder
     2. Create modules folder
@@ -44,15 +46,15 @@ Mandatory Installations
 [✅] Append table to the Dom
 [✅] Create Complete Task Button 
 [✅] Append Complete Button to the table
-[] When a Task is complete, its visual representation should change on the front end. For example, the background of the task container could change from gray to green. The complete option should be 'checked off'. 
+[✅] When a Task is complete, its visual representation should change on the front end. For example, the background of the task container could change from gray to green. The complete option should be 'checked off'. 
 [✅] Create PUT route and Link the Complete Button to this route
 [✅] Create a Delete Button
 [✅] Append Delete Button to the table
 [✅] Create DELETE route and Link the Delete Button to this route
 [✅] Add an Image folder and link it to html file
 [✅] Style ToDo List table, make the page looks great!
-[] Attempt stretch goals
-[] Add Additional ToDos if needed
+[✅] Attempt stretch goals
+[?] Add Additional ToDos if needed
 
 
 
